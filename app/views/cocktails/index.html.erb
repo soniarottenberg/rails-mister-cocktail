@@ -1,0 +1,14 @@
+<div class="navbar bg-light">
+  <h1>Cocktails</h1>
+  <%= link_to "Create your own", new_cocktail_path, class: "btn btn-primary" %>
+</div>
+
+<div class="container">
+  <div class="cards">
+    <% @cocktails.each do |cocktail|  %>
+    <div class="card-category">
+      <%= link_to cocktail.name, cocktail_path(cocktail) %>
+    </div>
+    <% end %>
+  </div>
+</div>

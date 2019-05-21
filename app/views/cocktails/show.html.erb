@@ -1,0 +1,23 @@
+<div class="container">
+  <div>
+    <h1><%= @cocktail.name %></h1>
+  </div>
+
+  <div>
+    <%= link_to 'Add ingredient', new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
+    <%= link_to 'go back', cocktails_path, class: "btn btn-warning" %>
+  </div>
+
+  <div class="cards">
+    <% @cocktail.doses.each do |dose| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <%= dose.ingredient.name %> <br>
+      <%= dose.description %> <br>
+      <%= link_to "delete", dose_path(dose),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+    </div>
+
+    <% end %>
+  </div>
+</div>
