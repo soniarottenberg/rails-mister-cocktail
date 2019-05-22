@@ -1,12 +1,19 @@
-<div class="navbar bg-light">
-  <h1>Cocktails</h1>
-  <%= link_to "Create your own", new_cocktail_path, class: "btn btn-primary" %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1547059470-3b0c7cd958a4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2551&q=80)">
+  <div class="navbar sticky-top">
+    <h4 class="m-0">Menu</h4>
+    <%= link_to "Create your own", new_cocktail_path, class: "btn btn-outline-primary" %>
+  </div>
+  <h1>Mister Cocktail</h1>
+    <p>
+    <span id="banner-typed-text">Have fun!</span>
+    </p>
 </div>
 
-<div class="container">
+<div class="container mt-3">
+  <h2 class="text-center">Discover most popular cocktails</h2>
   <div class="cards">
     <% @cocktails.each do |cocktail|  %>
-    <div class="card-category">
+    <div class="card">
       <%= link_to cocktail.name, cocktail_path(cocktail) %>
     </div>
     <% end %>

@@ -1,3 +1,8 @@
+<div class="navbar sticky-top" id="dark">
+  <h4 class="m-0">Menu</h4>
+  <%= link_to "Create your own", new_cocktail_path, class: "btn btn-outline-primary" %>
+</div>
+
 <div class="container">
   <div>
     <h1><%= @cocktail.name %></h1>
@@ -5,7 +10,7 @@
 
   <div>
     <%= link_to 'Add ingredient', new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
-    <%= link_to 'go back', cocktails_path, class: "btn btn-warning" %>
+    <%= link_to 'go back', root_path, class: "btn btn-warning" %>
   </div>
 
   <div class="cards">
